@@ -1,0 +1,25 @@
+import {scaledHeight, scaledWidth} from '@/utils/responsive';
+import React from 'react';
+import Svg, {Rect, Defs, Pattern, Use, Image} from 'react-native-svg';
+import {ISvgProps} from './types';
+
+const TurkeyFlagSvg: React.FC<ISvgProps> = ({width = scaledWidth(26), height = scaledHeight(16), ...props}) => {
+	return (
+		<Svg width={width} height={height} viewBox="0 0 26 16" fill="none" {...props}>
+			<Rect width="26" height="16" fill="url(#pattern0)" />
+			<Defs>
+				<Pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+					<Use xlinkHref="#image0_2_375" transform="translate(0 -0.0423438) scale(0.0025 0.0040625)" />
+				</Pattern>
+				<Image
+					id="image0_2_375"
+					width="400"
+					height="267"
+					xlinkHref="data:image/png;base64,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"
+				/>
+			</Defs>
+		</Svg>
+	);
+};
+
+export default TurkeyFlagSvg;
